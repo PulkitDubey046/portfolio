@@ -7,6 +7,7 @@ import facebookIcon from '../../assets/facebook-icon.png';
 import twitterIcon from '../../assets/twitter.png';
 import youtubeIcon from '../../assets/youtube.png';
 import instagramIcon from '../../assets/instagram.png';
+import Edunet from '../../assets/Edunet-Foundation-logo.png';
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 
@@ -39,6 +40,7 @@ const Contact = () => {
                     <img src={Adobe} alt="Client" className="clientImg" />
                     <img src={Microsoft} alt="Client" className="clientImg" />
                     <img src={Facebook} alt="Client" className="clientImg" />                   
+                    <img src={Edunet} alt="Client" className="clientImg" />                   
                 </div>
             </div>
             <div id="contact">
