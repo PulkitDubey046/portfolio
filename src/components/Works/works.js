@@ -1,141 +1,93 @@
-import React from 'react';
-import './works.css';
-import Portfolio1 from '../../assets/portfolio-1.png';
-import Portfolio2 from '../../assets/portfolio-2.png';
-import Portfolio3 from '../../assets/portfolio-3.png';
-import Portfolio4 from '../../assets/portfolio-4.png';
-import Portfolio5 from '../../assets/portfolio-5.png';
-import Portfolio6 from '../../assets/portfolio-6.png';
+import React from "react";
+import "./works.css";
+
+/* Images */
+import BalajiComputerAcademy from "../../assets/portfolio1.png";
+import AiCareerPathGuide from "../../assets/portfolio2.png";
+import PersonalPortfolio from "../../assets/portfolio3.png";
+import Pomodoro from "../../assets/portfolio4.png";
+import Study2Create from "../../assets/portfolio5.png";
+import Youtube from "../../assets/portfolio6.png";
 
 const Works = () => {
-    return (
-    <section id='works'>
-        <h2 className="worksTitle">My Portfolio</h2>
-        <span className="worksDesc">
-            I take pride in paying attention to the smallest details and making sure that my work is pixel perfect. 
-            I am excited to bring my skills and experience to help businesses achieve their goals and create a strong online presence.
-        </span>
+  const projects = [
+    {
+      img: BalajiComputerAcademy,
+      title: "Balaji Computer Academy Website",
+      tech: "HTML, CSS, JavaScript, Bootstrap",
+      desc: "Responsive, SEO-friendly educational website with courses and contact pages.",
+      link: "https://balajicomputeracademy.netlify.app/",
+    },
+    {
+      img: AiCareerPathGuide,
+      title: "AI Career Path Guide",
+      tech: "Streamlit, Gemini AI, Python",
+      desc: "AI-powered tool that provides personalized career guidance.",
+      link: "https://career-path-guide-pulkitdubey046.streamlit.app/",
+    },
+    {
+      img: PersonalPortfolio,
+      title: "Personal Portfolio Website",
+      tech: "React, CSS, GitHub, Netlify",
+      desc: "Modern portfolio showcasing skills, projects, and animations.",
+      link: "https://pulkitdubey.netlify.app/",
+    },
+    {
+      img: Pomodoro,
+      title: "Pomodoro Timer App",
+      tech: "HTML, CSS, JavaScript",
+      desc: "A productivity timer inspired by Pomofocus.io.",
+      link: "https://pulkitdubey046.github.io/Pomodoro-app/",
+    },
+    {
+      img: Study2Create,
+      title: "Study To Create Website",
+      tech: "HTML, CSS, JavaScript",
+      desc: "A clean and simple learning resource platform.",
+      link: "https://studytocreate.netlify.app/",
+    },
+    {
+      img: Youtube,
+      title: "YouTube Clone",
+      tech: "HTML, CSS, JavaScript",
+      desc: "My first deployed project built using basic web technologies.",
+      link: "https://pulkitdubey046.github.io/Youtube-clone/",
+    },
+  ];
 
-        {/* Images Section */}
-        <div className="worksImgs">
-            <img src={Portfolio1} alt="" className="worksImg" />
-            <img src={Portfolio2} alt="" className="worksImg" />
-            <img src={Portfolio3} alt="" className="worksImg" />
-            <img src={Portfolio4} alt="" className="worksImg" />
-            <img src={Portfolio5} alt="" className="worksImg" />
-            <img src={Portfolio6} alt="" className="worksImg" />
-        </div>
+  return (
+    <section id="works" className="works-section">
+      <h2 className="worksTitle">My Portfolio</h2>
+      <p className="worksDesc">
+        I take pride in creating visually appealing, functional and responsive
+        digital experiences.
+      </p>
 
-        <button className="workBtn">See More</button>
+      {/* PROJECT GRID */}
+      <div className="projectGrid">
+        {projects.map((project, index) => (
+          <div key={index} className="projectCard">
+            <img src={project.img} alt={project.title} className="projectImg" />
 
-        {/* ---------- Your Added Project Cards ---------- */}
-        <section id="projects" className="projectsSection">
-            <h2 className="projectsHeading">Projects</h2>
+            <div className="projectContent">
+              <h3 className="projectTitle">{project.title}</h3>
+              <p className="techStack">Tech Stack: {project.tech}</p>
+              <p className="projectDesc">{project.desc}</p>
 
-            {/* Card 1 */}
-            <div className="projectCard">
-                <h3 className="projectTitle">Balaji Computer Academy Website</h3>
-                <p className="techStack">Tech Stack: HTML, CSS, JavaScript, Bootstrap</p>
-                <p>
-                    Developed a responsive, SEO-friendly educational website with course
-                    listings and contact sections. Achieved top ranking in Google search results for the academy's brand keywords...
-                </p>
-                <a 
-                    href="https://balajicomputeracademy.netlify.app/" 
-                    target="_blank" rel="noopener noreferrer"
-                    className="projectLink"
-                >
-                    View Project
-                </a>
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="projectLink"
+              >
+                View Project
+              </a>
             </div>
-
-            {/* Card 2 */}
-            <div className="projectCard">
-                <h3 className="projectTitle"> AI Career Path Guide</h3>
-                <p className="techStack">Tech Stack:  Streamlit, Gemini AI, Python</p>
-                <p>
-                    Built an AI-driven web application that provides personalized career guidance
-                    based on user education and interests.
-                </p>
-                <a 
-                    href="https://career-path-guide-pulkitdubey046.streamlit.app/" 
-                    target="_blank" rel="noopener noreferrer"
-                    className="projectLink"
-                >
-                    View Project
-                </a>
-            </div>
-
-            {/* Card 3 */}
-            <div className="projectCard">
-                <h3 className="projectTitle">Personal Portfolio Website</h3>
-                <p className="techStack">Tech Stack: React, CSS, GitHub, Netlify</p>
-                <p>
-                    A modern portfolio to showcase projects, skills, and contact information with smooth animations,
-                    responsive design and continuous deployment configured.
-                </p>
-                <a 
-                    href="https://pulkitdubey.netlify.app/" 
-                    target="_blank" rel="noopener noreferrer"
-                    className="projectLink"
-                >
-                    View Project
-                </a>
-            </div>
-        
-            {/* Card 4 */}
-            <div className="projectCard">
-                <h3 className="projectTitle">Pomodoro Timer App </h3>
-                <p className="techStack">Tech Stack: HTML, CSS, JavaScript, GitHub Pages</p>
-                <p>
-                    A web-based Pomodoro Timer inspired by Pomofocus.io. 
-                    Built by Pulkit Dubey, it brings structure and focus to your workflow 
-                    using the proven Pomodoro Technique.
-                </p>
-                <a 
-                    href="https://pulkitdubey046.github.io/Pomodoro-app/" 
-                    target="_blank" rel="noopener noreferrer"
-                    className="projectLink"
-                >
-                    View Project
-                </a>
-            </div>
-            
-            {/* Card 5 */}
-            <div className="projectCard">
-                <h3 className="projectTitle">Study To Create Website</h3>
-                <p className="techStack">Tech Stack: HTML, CSS, JavaScript, Netlify</p>
-                <p>
-                   A simple and clean library website named "Study To Create" that offers free resources and tutorials for learners to enhance their skills and knowledge.
-                </p>
-                <a 
-                    href="https://studytocreate.netlify.app/" 
-                    target="_blank" rel="noopener noreferrer"
-                    className="projectLink"
-                >
-                    View Project
-                </a>
-            </div>
-
-            {/* Card 6 */}
-            <div className="projectCard">
-                <h3 className="projectTitle">Youtube Clone</h3>
-                <p className="techStack">Tech Stack: HTML, CSS, JavaScript, GitHub Pages</p>
-                <p>
-                    Youtube-clone is one of the starting project which i made and it was the first project which was deployed through GitHub Pages
-                </p>
-                <a 
-                    href="https://pulkitdubey046.github.io/Youtube-clone/" 
-                    target="_blank" rel="noopener noreferrer"
-                    className="projectLink"
-                >
-                    View Project
-                </a>
-            </div>
-        </section>
+          </div>
+        ))}
+      </div>
     </section>
-);
-
-}
+  );
+};
 
 export default Works;
