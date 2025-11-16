@@ -1,14 +1,12 @@
 import './contact.css';
-import Walmart from '../../assets/walmart.png';
-import Adobe from '../../assets/adobe.png';
-import Microsoft from '../../assets/microsoft.png';
-import Facebook from '../../assets/facebook.png';
+import React, { useRef } from 'react';
 import facebookIcon from '../../assets/facebook-icon.png';
 import twitterIcon from '../../assets/twitter.png';
 import youtubeIcon from '../../assets/youtube.png';
 import instagramIcon from '../../assets/instagram.png';
 import Edunet from '../../assets/Edunet-Foundation-logo.png';
-import React, { useRef } from 'react';
+import IbmSkillBuild from '../../assets/IbmSkillbuild.png';
+import CodeSoft from '../../assets/CodeSoft.png';
 import emailjs from '@emailjs/browser';
 
 const Contact = () => {
@@ -17,7 +15,7 @@ const Contact = () => {
     const sendEmail = (e) => {
         e.preventDefault();
 
-        emailjs.sendForm('service_6phm4ar', 'template_zcxds5a', form.current, 'blaHt_5KIJ711DfGH')
+        emailjs.sendForm('service_k6hpcwa', 'template_sblzkia', form.current, 'fSsemW0LRD8tXLfPf55t8')
             .then((result) => {
                 console.log(result.text);
                 e.target.reset();
@@ -35,12 +33,10 @@ const Contact = () => {
                     I have had the opportunity to work with a diverse group of companies. 
                     Some of the notable companies I have worked with includes
                 </span>
-                <div className="clientImgs">
-                    <img src={Walmart} alt="Client" className="clientImg" />
-                    <img src={Adobe} alt="Client" className="clientImg" />
-                    <img src={Microsoft} alt="Client" className="clientImg" />
-                    <img src={Facebook} alt="Client" className="clientImg" />                   
+                <div className="clientImgs">                  
                     <img src={Edunet} alt="Client" className="clientImg" />                   
+                    <img src={IbmSkillBuild} alt="Client" className="clientImg" />
+                    <img src={CodeSoft} alt="Client" className="clientImg" />                   
                 </div>
             </div>
             <div id="contact">

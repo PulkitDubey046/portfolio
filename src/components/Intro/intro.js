@@ -40,7 +40,7 @@ const Intro = () => {
                 </p>
 
                 <Link>
-                    <button className="btn">
+                    <button className="btn hireBtn">
                         <img src={btnImg} alt="Hire" className='btnImg'/> Hire Me
                     </button>
                 </Link>

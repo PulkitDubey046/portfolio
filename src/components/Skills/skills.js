@@ -72,11 +72,16 @@ const Skills = () => {
                 ))}
             </div>
 
-            {visibleCount < allSkills.length && (
+            {visibleCount < allSkills.length ? (
                 <button className="seeMoreBtn" onClick={() => setVisibleCount(allSkills.length)}>
-                    See More
+                    Show More
+                </button>
+            ) : (
+                <button className="seeMoreBtn" onClick={() => setVisibleCount(3)}>
+                    Show Less
                 </button>
             )}
+
         </section>
     );
 }
